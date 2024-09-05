@@ -35,7 +35,7 @@ body { margin: 0; font-family:'Lucida Handwriting',cursive;
   color: rgba(0, 0, 0, .87);
 }
 .mat-toolbar.mat-primary {
-  background: transparent;
+  background: #e6e6e6;
   color: #000;
 }
 .toolbar[_ngcontent-ng-c2304799382] {

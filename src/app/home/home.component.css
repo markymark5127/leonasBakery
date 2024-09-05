@@ -1,52 +1,90 @@
-/* image-carousel.component.css */
+/* Apply a modern, minimalist font */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Modern and clean font */
+  color: #333; /* Dark gray text for better readability */
+  background-color: #f4f4f4; /* Light gray background for overall page */
+}
+
+/* Container for the carousel */
 .carousel-container {
-  position: fixed; /* Fixed position to stay at the top of the page */
-  top: 0; /* Align to the top of the page */
-  left: 0; /* Align to the left of the page */
-  width: 100vw; /* Full viewport width */
-  height: auto; /* Adjust height to maintain aspect ratio */
-  z-index: -1; /* Send behind other elements */
-  margin: 0; /* No margin */
-  overflow: hidden;
+  position: relative; /* Relative positioning for proper control placement */
+  width: 100%; /* Full width of the parent */
+  margin: 0 auto; /* Center alignment */
+  overflow: hidden; /* Hide overflow */
 }
 
+/* Carousel track holding the images */
 .carousel {
-  display: flex;
-  transition: transform 0.5s ease;
-  width: 100%;
+  display: flex; /* Flexbox for horizontal scrolling */
+  transition: transform 0.5s ease; /* Smooth transition for sliding effect */
 }
 
+/* Carousel items */
 .carousel-item {
-  min-width: 100%;
-  display: none;
+  min-width: 100%; /* Full width of the container */
+  flex-shrink: 0; /* Prevent items from shrinking */
 }
 
-.carousel-item.active {
-  display: block;
-}
-
+/* Image styling */
 .carousel img {
-  width: 100vw; /* Full viewport width */
+  width: 100%; /* Full width of the carousel item */
   height: auto; /* Maintain aspect ratio */
-  display: block;
+  display: block; /* Remove any extra spacing */
 }
 
+/* Styling for navigation controls */
 .carousel-control {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   border: none;
   color: white;
   padding: 10px;
   cursor: pointer;
-  z-index: 1; /* Make sure controls are above the carousel */
+  z-index: 1; /* Ensure controls are above the images */
+  font-size: 18px;
+  border-radius: 50%; /* Rounded controls */
 }
 
+/* Left navigation control */
 .carousel-control.prev {
   left: 10px;
 }
 
+/* Right navigation control */
 .carousel-control.next {
   right: 10px;
+}
+
+/* "Our Story" section styles */
+.story-section {
+  padding: 2rem; /* Add padding around the text */
+  background-color: #e6e6e6; /* White background for minimalism */
+  color: #333; /* Dark gray text for readability */
+  text-align: center; /* Center-align text */
+  max-width: 800px; /* Limit width for better readability */
+  margin: 2rem auto; /* Center-align section with margin */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+h1 {
+  font-size: 2.5rem; /* Larger font size for the heading */
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem; /* Font size for paragraphs */
+  line-height: 1.6; /* Line height for readability */
+  margin-bottom: 1rem;
+}
+
+p:first-of-type {
+  margin-top: 0;
+}
+
+p:last-of-type {
+  margin-bottom: 0;
 }

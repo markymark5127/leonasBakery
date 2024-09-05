@@ -1,14 +1,19 @@
 <!-- image-carousel.component.html -->
-<div class="carousel-container">
+<div class="carousel-container" (mouseenter)="stopAutoSlide()" (mouseleave)="startAutoSlide()">
   <div class="carousel">
-    <div
-      class="carousel-item"
-      *ngFor="let image of images; let i = index"
-      [ngClass]="{'active': i === currentIndex}"
-    >
+    <div class="carousel-item" *ngFor="let image of images; let i = index" [class.active]="i === currentIndex">
       <img [src]="image" alt="Image {{i + 1}}">
     </div>
   </div>
   <button class="carousel-control prev" (click)="prevSlide()">&#10094;</button>
   <button class="carousel-control next" (click)="nextSlide()">&#10095;</button>
+</div>
+<div class="story-section">
+  <h1>Our Story</h1>
+  <p>Welcome to Leona’s Cafe and Bakery, a charming haven nestled in the heart of Dover, PA. Our story began with a simple dream: to create a warm, inviting space where people could gather to savor delicious, homemade treats and share moments of joy.</p>
+  <p>Named after our beloved founder, Leona, our cafe is inspired by her passion for baking and her unwavering dedication to bringing people together through food. Leona’s love for crafting delectable pastries and comforting meals was the heart of our vision. Every recipe we use is a tribute to her legacy, crafted with the same care and attention she poured into her baking.</p>
+  <p>At Leona’s, we believe that great food has the power to create connections and memories. From our freshly baked bread and pastries to our carefully curated coffee and tea selection, each item is made with love and the finest ingredients. Our goal is to make every visit a delightful experience, whether you’re catching up with friends, enjoying a quiet moment alone, or celebrating a special occasion.</p>
+  <p>Thank you for being part of our story. We look forward to welcoming you and sharing the joy of good food and great company.</p>
+  <p>Warmly,</p>
+  <p>The Leona’s Cafe and Bakery Team</p>
 </div>

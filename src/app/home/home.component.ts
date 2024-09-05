@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, OnDestroy {
   images = [
     '/assets/cakesAI.jpg',
     '/assets/ballsAILowMin.jpg',
@@ -15,19 +15,19 @@ export class HomeComponent {
   private intervalId: any;
 
   ngOnInit() {
-    this.startAutoSlide();
+    this.startAutoSlide(); // Start the auto-slide on component initialization
   }
 
   ngOnDestroy() {
-    this.stopAutoSlide();
+    this.stopAutoSlide(); // Clear the interval when the component is destroyed
   }
 
   nextSlide() {
-    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+    this.currentIndex = (this.currentIndex + 1) % this.images.length; // Increment index and loop back to 0
   }
 
   prevSlide() {
-    this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+    this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length; // Decrement index and loop
   }
 
   startAutoSlide() {
@@ -39,7 +39,8 @@ export class HomeComponent {
 
   stopAutoSlide() {
     if (this.intervalId) {
-      clearInterval(this.intervalId);
+      clearInterval(this.intervalId); // Clear the interval if it exists
+      this.intervalId = null;
     }
   }
 }
