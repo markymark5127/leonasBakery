@@ -7,9 +7,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   images = [
-    '/assets/cakesAI.jpg',
-    '/assets/ballsAILowMin.jpg',
-    '/assets/meatsAI.jpg'
+    'assets/cakesAI.jpg',
+    'assets/ballsAILowMin.jpg',
+    'assets/meatsAI.jpg'
   ];
   currentIndex: number = 0;
   private intervalId: any;
