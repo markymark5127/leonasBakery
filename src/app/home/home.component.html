@@ -1,0 +1,11 @@
+<!-- app.component.html -->
+<ngb-carousel *ngIf="images.length">
+  <ng-template ngbSlide *ngFor="let img of images; let i = index">
+    <div class="picsum-img-wrapper">
+      <img [src]="img.src" [alt]="img.alt">
+    </div>
+    <div class="carousel-caption">
+      <h3>Slide {{ i + 1 }}</h3>
+    </div>
+  </ng-template>
+</ngb-carousel>
