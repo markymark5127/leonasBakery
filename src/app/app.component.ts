@@ -19,8 +19,8 @@ export class AppComponent {
   public isMobile = false;
 
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    iconRegistry.addSvgIcon('menu', sanitizer.bypassSecurityTrustResourceUrl('/assets/menu.svg'));
-    iconRegistry.addSvgIcon('close', sanitizer.bypassSecurityTrustResourceUrl('/assets/close.svg'));
+    iconRegistry.addSvgIcon('menu', sanitizer.bypassSecurityTrustResourceUrl('assets/menu.svg'));
+    iconRegistry.addSvgIcon('close', sanitizer.bypassSecurityTrustResourceUrl('assets/close.svg'));
   }
   ngOnInit(): void {
     this.innerWidth = window.innerWidth;
