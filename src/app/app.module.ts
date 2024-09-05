@@ -35,5 +35,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; // Import NgbModule
         ReactiveFormsModule,
         MatSidenavModule,
         MatToolbarModule,
-        NgbModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        NgbModule],
+        providers: [provideHttpClient(withInterceptorsFromDi())] })
+        
 export class AppModule { }

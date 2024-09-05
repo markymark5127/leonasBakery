@@ -7,8 +7,39 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   images = [
-    { src: '/assets/cakesAI.jpg', alt: 'First Slide' },
-    { src: '/assets/ballsAI.jpg', alt: 'Second Slide' },
-    { src: '/assets/meats.jpg', alt: 'Third Slide' }
+    '/assets/cakesAI.jpg',
+    '/assets/ballsAILowMin.jpg',
+    '/assets/meatsAI.jpg'
   ];
+  currentIndex: number = 0;
+  private intervalId: any;
+
+  ngOnInit() {
+    this.startAutoSlide();
+  }
+
+  ngOnDestroy() {
+    this.stopAutoSlide();
+  }
+
+  nextSlide() {
+    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+  }
+
+  prevSlide() {
+    this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+  }
+
+  startAutoSlide() {
+    // Automatically change slide every 3 seconds
+    this.intervalId = setInterval(() => {
+      this.nextSlide();
+    }, 3000);
+  }
+
+  stopAutoSlide() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
 }

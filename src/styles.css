@@ -1,14 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+/* styles.css or image-carousel.component.css */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease-in-out; /* 1.5 seconds duration for fade-in effect */
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family:'Lucida Handwriting',cursive;
   color: #333333;
   background-color: #C26868;
-  -webkit-animation: fadein 4s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 4s; /* Firefox < 16 */
-  -ms-animation: fadein 4s; /* Internet Explorer */
-  -o-animation: fadein 4s; /* Opera < 12.1 */
-  animation: fadein 4s;
 }
 .mdc-button {
   -moz-osx-font-smoothing: grayscale;
@@ -21,4 +29,21 @@ body { margin: 0; font-family:'Lucida Handwriting',cursive;
   -webkit-text-decoration: var(--mdc-typography-button-text-decoration, none);
   text-decoration: var(--mdc-typography-button-text-decoration, none);
   text-transform: var(--mdc-typography-button-text-transform, none);
+}
+.mat-drawer-container {
+  background-color: #C26868;
+  color: rgba(0, 0, 0, .87);
+}
+.mat-toolbar.mat-primary {
+  background: transparent;
+  color: #000;
+}
+.toolbar[_ngcontent-ng-c2304799382] {
+  text-align: center;
+  width: 100vw;
+  background-color: #e6e6e6;
+  color: black;
+  font-weight: 600;
+  border-bottom-style: solid;
+  font-size: x-large;
 }
