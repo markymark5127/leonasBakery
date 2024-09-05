@@ -45,4 +45,28 @@
   margin-right: auto;
   width: 100%;
 }
+/* Default styles */
+.imging.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 767px) {
+  .imging.logo {
+    padding: 0 1rem; /* Adjust padding for smaller screens */
+    text-align: center;
+  }
+
+  .imging.logo h1 {
+    font-size: 1.5rem; /* Adjust font size for mobile */
+    margin-bottom: 0.5rem;
+  }
+
+  .imging.logo h6 {
+    font-size: 1rem; /* Adjust font size for mobile */
+  }
+}
+
 
